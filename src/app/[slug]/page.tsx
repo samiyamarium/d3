@@ -13,7 +13,7 @@ const urlFor = (source: SanityImageSource) =>
     : null;
 
 const options = { next: { revalidate: 30 } };
-
+/*eslint no-unused-vars: "error"*/
 type Params = Promise<{ slug: string }>
 export default async function PostPage({ params }: { params: Params }) {
   const { slug } = await params;
