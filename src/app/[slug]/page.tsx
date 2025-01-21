@@ -14,7 +14,7 @@ const urlFor = (source: SanityImageSource) =>
 
 const options = { next: { revalidate: 30 } };
 
-type Params = Promise<{ slug: any }>
+type Params = Promise<{ slug: string }>
 export default async function PostPage({ params }: { params: Params }) {
   const { slug } = await params;
   const post = await client.fetch<SanityDocument>(POST_QUERY, params, options);
