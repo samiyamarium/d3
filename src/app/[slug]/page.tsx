@@ -25,7 +25,7 @@ export default async function PostPage({ params }: { params: Params }) {
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
       
-     <div className="flex-1 outline outline-4 outline-amber-300 mx-20"> {postImageUrl && (
+    {postImageUrl && (
         <img 
           src={postImageUrl}
           alt={post.title}
@@ -33,7 +33,7 @@ export default async function PostPage({ params }: { params: Params }) {
           width="550"
           height="310"
         />
-      )} </div>
+      )} 
       <h1 className="text-4xl font-bold text-center rounded-md outline outline-8 outline-yellow-300 text-red-500 mb-8">{post.title}</h1>
       <div className="prose rounded-md outline outline-8 outline-orange-600">
         
