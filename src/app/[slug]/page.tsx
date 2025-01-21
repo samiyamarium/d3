@@ -24,23 +24,25 @@ export default async function PostPage({ params }: { params: Params }) {
 
   return (
     <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
-      <Link href="/" className="hover:underline">
-        ← Back to posts
-      </Link>
-      {postImageUrl && (
-        <img
+      
+     <div className="flex-1 outline outline-4 outline-amber-300 mx-20"> {postImageUrl && (
+        <img 
           src={postImageUrl}
           alt={post.title}
-          className="aspect-video rounded-xl"
+          className="aspect-video rounded-xl "
           width="550"
           height="310"
         />
-      )}
-      <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
-      <div className="prose">
-        <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
-        {Array.isArray(post.body) && <PortableText value={post.body} />}
+      )} </div>
+      <h1 className="text-4xl font-bold text-center rounded-md outline outline-8 outline-yellow-300 text-red-500 mb-8">{post.title}</h1>
+      <div className="prose rounded-md outline outline-8 outline-orange-600">
+        
+       <p className="outline outline-2 outline-purple-300 text-pink-700 space-y-2 tracking-wide "> {Array.isArray(post.body) && <PortableText value={post.body} />}</p>
       </div>
+      <p className="text-xs text-center font-semibold text-green-700">Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
+      <Link href="/" className="hover:underline flex-1 outline outline-8 outline-pink-400 font-bold p-4 text-center text-xl text-purple-950 ">
+        ← See more
+      </Link>
     </main>
   );
 }
